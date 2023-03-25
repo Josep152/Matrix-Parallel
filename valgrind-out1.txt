@@ -1,0 +1,166 @@
+==74== Memcheck, a memory error detector
+==74== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==74== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
+==74== Command: ./main1.exe
+==74== Parent PID: 8
+==74== 
+--74-- 
+--74-- Valgrind options:
+--74--    --leak-check=full
+--74--    --show-leak-kinds=all
+--74--    --track-origins=yes
+--74--    --verbose
+--74--    --log-file=valgrind-out1.txt
+--74-- Contents of /proc/version:
+--74--   Linux version 4.4.0-19041-Microsoft (Microsoft@Microsoft.com) (gcc version 5.4.0 (GCC) ) #488-Microsoft Mon Sep 01 13:43:00 PST 2020
+--74-- 
+--74-- Arch and hwcaps: AMD64, LittleEndian, amd64-cx16-lzcnt-rdtscp-sse3-avx-avx2-bmi
+--74-- Page sizes: currently 4096, max supported 4096
+--74-- Valgrind library directory: /usr/lib/valgrind
+--74-- Reading syms from /mnt/d/Programacion/Paralela/Matrix2/main1.exe
+--74-- Reading syms from /lib/x86_64-linux-gnu/ld-2.27.so
+--74--   Considering /lib/x86_64-linux-gnu/ld-2.27.so ..
+--74--   .. CRC mismatch (computed 385b96e8 wanted 9d917e0b)
+--74--   Considering /usr/lib/debug/lib/x86_64-linux-gnu/ld-2.27.so ..
+--74--   .. CRC is valid
+--74-- Reading syms from /usr/lib/valgrind/memcheck-amd64-linux
+--74--   Considering /usr/lib/valgrind/memcheck-amd64-linux ..
+--74--   .. CRC mismatch (computed 41ddb025 wanted 9972f546)
+--74--    object doesn't have a symbol table
+--74--    object doesn't have a dynamic symbol table
+--74-- Scheduler: using generic scheduler lock implementation.
+--74-- Reading suppressions file: /usr/lib/valgrind/default.supp
+==74== embedded gdbserver: reading from /tmp/vgdb-pipe-from-vgdb-to-74-by-jsa73-on-???
+==74== embedded gdbserver: writing to   /tmp/vgdb-pipe-to-vgdb-from-74-by-jsa73-on-???
+==74== embedded gdbserver: shared mem   /tmp/vgdb-pipe-shared-mem-vgdb-74-by-jsa73-on-???
+==74== 
+==74== TO CONTROL THIS PROCESS USING vgdb (which you probably
+==74== don't want to do, unless you know exactly what you're doing,
+==74== or are doing some strange experiment):
+==74==   /usr/lib/valgrind/../../bin/vgdb --pid=74 ...command...
+==74== 
+==74== TO DEBUG THIS PROCESS USING GDB: start GDB like this
+==74==   /path/to/gdb ./main1.exe
+==74== and then give GDB the following command
+==74==   target remote | /usr/lib/valgrind/../../bin/vgdb --pid=74
+==74== --pid is optional if only one valgrind process is running
+==74== 
+==74== error calling PR_SET_PTRACER, vgdb might block
+--74-- REDIR: 0x4020d20 (ld-linux-x86-64.so.2:strlen) redirected to 0x580608c1 (???)
+--74-- REDIR: 0x4020b00 (ld-linux-x86-64.so.2:index) redirected to 0x580608db (???)
+--74-- Reading syms from /usr/lib/valgrind/vgpreload_core-amd64-linux.so
+--74--   Considering /usr/lib/valgrind/vgpreload_core-amd64-linux.so ..
+--74--   .. CRC mismatch (computed 50df1b30 wanted 4800a4cf)
+--74--    object doesn't have a symbol table
+--74-- Reading syms from /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so
+--74--   Considering /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so ..
+--74--   .. CRC mismatch (computed f893b962 wanted 95ee359e)
+--74--    object doesn't have a symbol table
+==74== WARNING: new redirection conflicts with existing -- ignoring it
+--74--     old: 0x04020d20 (strlen              ) R-> (0000.0) 0x580608c1 ???
+--74--     new: 0x04020d20 (strlen              ) R-> (2007.0) 0x04c34db0 strlen
+--74-- REDIR: 0x401d540 (ld-linux-x86-64.so.2:strcmp) redirected to 0x4c35ee0 (strcmp)
+--74-- REDIR: 0x4021260 (ld-linux-x86-64.so.2:mempcpy) redirected to 0x4c394f0 (mempcpy)
+--74-- Reading syms from /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25
+--74--    object doesn't have a symbol table
+--74-- Reading syms from /lib/x86_64-linux-gnu/libc-2.27.so
+--74--   Considering /lib/x86_64-linux-gnu/libc-2.27.so ..
+--74--   .. CRC mismatch (computed 8c0be908 wanted 7c906570)
+--74--   Considering /usr/lib/debug/lib/x86_64-linux-gnu/libc-2.27.so ..
+--74--   .. CRC is valid
+--74-- Reading syms from /lib/x86_64-linux-gnu/libm-2.27.so
+--74--   Considering /lib/x86_64-linux-gnu/libm-2.27.so ..
+--74--   .. CRC mismatch (computed 0fef35ac wanted 26ea9025)
+--74--   Considering /usr/lib/debug/lib/x86_64-linux-gnu/libm-2.27.so ..
+--74--   .. CRC is valid
+--74-- Reading syms from /lib/x86_64-linux-gnu/libgcc_s.so.1
+--74--    object doesn't have a symbol table
+--74-- REDIR: 0x5265a50 (libc.so.6:memmove) redirected to 0x4a2c6e0 (_vgnU_ifunc_wrapper)
+--74-- REDIR: 0x5264d60 (libc.so.6:strncpy) redirected to 0x4a2c6e0 (_vgnU_ifunc_wrapper)
+--74-- REDIR: 0x5265d30 (libc.so.6:strcasecmp) redirected to 0x4a2c6e0 (_vgnU_ifunc_wrapper)
+--74-- REDIR: 0x52647b0 (libc.so.6:strcat) redirected to 0x4a2c6e0 (_vgnU_ifunc_wrapper)
+--74-- REDIR: 0x5264d90 (libc.so.6:rindex) redirected to 0x4a2c6e0 (_vgnU_ifunc_wrapper)
+--74-- REDIR: 0x5267480 (libc.so.6:rawmemchr) redirected to 0x4a2c6e0 (_vgnU_ifunc_wrapper)
+--74-- REDIR: 0x5265bc0 (libc.so.6:mempcpy) redirected to 0x4a2c6e0 (_vgnU_ifunc_wrapper)
+--74-- REDIR: 0x52659f0 (libc.so.6:bcmp) redirected to 0x4a2c6e0 (_vgnU_ifunc_wrapper)
+--74-- REDIR: 0x5264d20 (libc.so.6:strncmp) redirected to 0x4a2c6e0 (_vgnU_ifunc_wrapper)
+--74-- REDIR: 0x5264820 (libc.so.6:strcmp) redirected to 0x4a2c6e0 (_vgnU_ifunc_wrapper)
+--74-- REDIR: 0x5265b20 (libc.so.6:memset) redirected to 0x4a2c6e0 (_vgnU_ifunc_wrapper)
+--74-- REDIR: 0x5282db0 (libc.so.6:wcschr) redirected to 0x4a2c6e0 (_vgnU_ifunc_wrapper)
+--74-- REDIR: 0x5264cc0 (libc.so.6:strnlen) redirected to 0x4a2c6e0 (_vgnU_ifunc_wrapper)
+--74-- REDIR: 0x5264890 (libc.so.6:strcspn) redirected to 0x4a2c6e0 (_vgnU_ifunc_wrapper)
+--74-- REDIR: 0x5265d80 (libc.so.6:strncasecmp) redirected to 0x4a2c6e0 (_vgnU_ifunc_wrapper)
+--74-- REDIR: 0x5264860 (libc.so.6:strcpy) redirected to 0x4a2c6e0 (_vgnU_ifunc_wrapper)
+--74-- REDIR: 0x5265ec0 (libc.so.6:memcpy@@GLIBC_2.14) redirected to 0x4a2c6e0 (_vgnU_ifunc_wrapper)
+--74-- REDIR: 0x5264dc0 (libc.so.6:strpbrk) redirected to 0x4a2c6e0 (_vgnU_ifunc_wrapper)
+--74-- REDIR: 0x52647e0 (libc.so.6:index) redirected to 0x4a2c6e0 (_vgnU_ifunc_wrapper)
+--74-- REDIR: 0x5264c90 (libc.so.6:strlen) redirected to 0x4a2c6e0 (_vgnU_ifunc_wrapper)
+--74-- REDIR: 0x526f380 (libc.so.6:memrchr) redirected to 0x4a2c6e0 (_vgnU_ifunc_wrapper)
+--74-- REDIR: 0x5265dd0 (libc.so.6:strcasecmp_l) redirected to 0x4a2c6e0 (_vgnU_ifunc_wrapper)
+--74-- REDIR: 0x52659c0 (libc.so.6:memchr) redirected to 0x4a2c6e0 (_vgnU_ifunc_wrapper)
+--74-- REDIR: 0x5283b70 (libc.so.6:wcslen) redirected to 0x4a2c6e0 (_vgnU_ifunc_wrapper)
+--74-- REDIR: 0x5265070 (libc.so.6:strspn) redirected to 0x4a2c6e0 (_vgnU_ifunc_wrapper)
+--74-- REDIR: 0x5265d00 (libc.so.6:stpncpy) redirected to 0x4a2c6e0 (_vgnU_ifunc_wrapper)
+--74-- REDIR: 0x5265cd0 (libc.so.6:stpcpy) redirected to 0x4a2c6e0 (_vgnU_ifunc_wrapper)
+--74-- REDIR: 0x52674b0 (libc.so.6:strchrnul) redirected to 0x4a2c6e0 (_vgnU_ifunc_wrapper)
+--74-- REDIR: 0x5265e20 (libc.so.6:strncasecmp_l) redirected to 0x4a2c6e0 (_vgnU_ifunc_wrapper)
+--74-- REDIR: 0x5355280 (libc.so.6:__strrchr_avx2) redirected to 0x4c34730 (rindex)
+--74-- REDIR: 0x525e020 (libc.so.6:malloc) redirected to 0x4c31aa0 (malloc)
+--74-- REDIR: 0x5355450 (libc.so.6:__strlen_avx2) redirected to 0x4c34cf0 (strlen)
+--74-- REDIR: 0x5351a60 (libc.so.6:__memcmp_avx2_movbe) redirected to 0x4c37e00 (bcmp)
+--74-- REDIR: 0x5270b30 (libc.so.6:__strcmp_sse2_unaligned) redirected to 0x4c35da0 (strcmp)
+--74-- REDIR: 0x4ed1330 (libstdc++.so.6:operator new[](unsigned long)) redirected to 0x4c32830 (operator new[](unsigned long))
+--74-- REDIR: 0x5355970 (libc.so.6:__mempcpy_avx_unaligned_erms) redirected to 0x4c39130 (mempcpy)
+--74-- REDIR: 0x5355090 (libc.so.6:__strchrnul_avx2) redirected to 0x4c39020 (strchrnul)
+--74-- REDIR: 0x5355990 (libc.so.6:__memcpy_avx_unaligned_erms) redirected to 0x4c386e0 (memmove)
+--74-- REDIR: 0x53512e0 (libc.so.6:__memchr_avx2) redirected to 0x4c35f80 (memchr)
+--74-- REDIR: 0x525e910 (libc.so.6:free) redirected to 0x4c32cd0 (free)
+==74== 
+==74== HEAP SUMMARY:
+==74==     in use at exit: 3,158,016 bytes in 1,539 blocks
+==74==   total heap usage: 1,541 allocs, 2 frees, 3,234,816 bytes allocated
+==74== 
+==74== Searching for pointers to 1,539 not-freed blocks
+==74== Checked 110,312 bytes
+==74== 
+==74== 1,048,576 bytes in 512 blocks are indirectly lost in loss record 1 of 6
+==74==    at 0x4C3289F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==74==    by 0x109266: Matrix::Matrix(int, int) (in /mnt/d/Programacion/Paralela/Matrix2/main1.exe)
+==74==    by 0x109041: main (in /mnt/d/Programacion/Paralela/Matrix2/main1.exe)
+==74== 
+==74== 1,048,576 bytes in 512 blocks are indirectly lost in loss record 2 of 6
+==74==    at 0x4C3289F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==74==    by 0x109266: Matrix::Matrix(int, int) (in /mnt/d/Programacion/Paralela/Matrix2/main1.exe)
+==74==    by 0x109061: main (in /mnt/d/Programacion/Paralela/Matrix2/main1.exe)
+==74== 
+==74== 1,048,576 bytes in 512 blocks are indirectly lost in loss record 3 of 6
+==74==    at 0x4C3289F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==74==    by 0x109266: Matrix::Matrix(int, int) (in /mnt/d/Programacion/Paralela/Matrix2/main1.exe)
+==74==    by 0x108CDA: multi_clasic(Matrix, Matrix) (in /mnt/d/Programacion/Paralela/Matrix2/main1.exe)
+==74==    by 0x109090: main (in /mnt/d/Programacion/Paralela/Matrix2/main1.exe)
+==74== 
+==74== 1,052,672 (4,096 direct, 1,048,576 indirect) bytes in 1 blocks are definitely lost in loss record 4 of 6
+==74==    at 0x4C3289F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==74==    by 0x1091FE: Matrix::Matrix(int, int) (in /mnt/d/Programacion/Paralela/Matrix2/main1.exe)
+==74==    by 0x109041: main (in /mnt/d/Programacion/Paralela/Matrix2/main1.exe)
+==74== 
+==74== 1,052,672 (4,096 direct, 1,048,576 indirect) bytes in 1 blocks are definitely lost in loss record 5 of 6
+==74==    at 0x4C3289F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==74==    by 0x1091FE: Matrix::Matrix(int, int) (in /mnt/d/Programacion/Paralela/Matrix2/main1.exe)
+==74==    by 0x109061: main (in /mnt/d/Programacion/Paralela/Matrix2/main1.exe)
+==74== 
+==74== 1,052,672 (4,096 direct, 1,048,576 indirect) bytes in 1 blocks are definitely lost in loss record 6 of 6
+==74==    at 0x4C3289F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==74==    by 0x1091FE: Matrix::Matrix(int, int) (in /mnt/d/Programacion/Paralela/Matrix2/main1.exe)
+==74==    by 0x108CDA: multi_clasic(Matrix, Matrix) (in /mnt/d/Programacion/Paralela/Matrix2/main1.exe)
+==74==    by 0x109090: main (in /mnt/d/Programacion/Paralela/Matrix2/main1.exe)
+==74== 
+==74== LEAK SUMMARY:
+==74==    definitely lost: 12,288 bytes in 3 blocks
+==74==    indirectly lost: 3,145,728 bytes in 1,536 blocks
+==74==      possibly lost: 0 bytes in 0 blocks
+==74==    still reachable: 0 bytes in 0 blocks
+==74==         suppressed: 0 bytes in 0 blocks
+==74== 
+==74== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 0 from 0)
+==74== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 0 from 0)
